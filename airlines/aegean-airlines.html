@@ -9,37 +9,15 @@
 body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
 .back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
 .back:hover{text-decoration:underline}
-.hero{position:relative;overflow:hidden}
-.hero img{width:100%;height:540px;max-height:85vh;aspect-ratio:9/16;max-width:540px;margin:0 auto;display:block;object-fit:cover;object-position:center;border-radius:0 0 20px 20px;filter:brightness(.85)}
-.hero-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent 0%,rgba(11,15,25,.95) 100%);padding:40px 32px 36px}
-.hero-overlay .flag{font-size:2.4rem;margin-bottom:8px}
-.hero-overlay h1{font-size:2.4rem;font-weight:900;color:#fff;margin-bottom:4px}
-.hero-overlay .code{display:inline-block;background:#e63946;color:#fff;padding:5px 16px;border-radius:8px;font-weight:800;font-size:.95rem;margin-top:8px}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;max-width:540px;height:auto;aspect-ratio:9/16;display:block;margin:0 auto;object-fit:cover;border-radius:0 0 20px 20px;filter:brightness(.9)}
 .content{max-width:760px;margin:0 auto;padding:0 20px 40px}
-.section{background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435}
-.section h2{font-size:1rem;font-weight:700;color:#6e8efb;margin-bottom:14px;letter-spacing:.3px}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.info-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0}
-.info-item .icon{font-size:1.2rem;flex-shrink:0;margin-top:2px}
-.info-item .label{font-size:.72rem;color:#6b7a90;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
-.info-item .value{font-size:.92rem;color:#cdd5e0;font-weight:600;margin-top:1px}
-.desc{font-size:.95rem;line-height:1.85;color:#b8c0d0}
-.desc strong{color:#e0e4ed}
-.desc em{color:#6e8efb;font-style:normal;font-weight:600}
-.route-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.route-list span{background:#1a2035;color:#8899b0;padding:5px 12px;border-radius:20px;font-size:.8rem;font-weight:500}
-.cta{background:linear-gradient(135deg,#0a1628,#1a2744);border:1px solid #2a3555;border-radius:16px;padding:24px 28px;margin-bottom:20px;text-align:center}
-.cta p{font-size:.88rem;line-height:1.7;color:#8899b0;margin-bottom:12px}
-.cta .email{color:#6e8efb;font-weight:700;font-size:.95rem}
-.hashtags{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 36px}
-.hashtags span{color:#3d4f6f;font-size:.82rem;font-weight:500}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
 .footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
-@media(max-width:600px){
-  .info-grid{grid-template-columns:1fr}
-  .hero img{height:300px}
-  .hero-overlay h1{font-size:1.6rem}
-  .section{padding:20px 18px}
-}
 </style>
 </head>
 <body>
@@ -47,108 +25,51 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;b
 <a class="back" href="../index.html">← APG Korea 문서함</a>
 
 <div class="hero">
-  <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=540&h=960&fit=crop" alt="Aegean Airlines">
-  <div class="hero-overlay">
-    <div class="flag">🇬🇷</div>
-    <h1>Aegean Airlines</h1>
-    <span class="code">A3</span>
-  </div>
+  <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=1080&h=1920&fit=crop" alt="Aegean Airlines - Santorini">
 </div>
 
 <div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Aegean Airlines
 
-  <div class="section">
-    <h2>📋 항공사 개요</h2>
-    <div class="desc">
-      🇬🇷 그리스의 국적항공사, <strong>Aegean Airlines(에게항공)</strong>을 소개합니다!<br><br>
-      1999년 설립된 Aegean Airlines는 그리스 최대 항공사로서, <strong>아테네 국제공항(ATH)</strong>을 허브로 그리스 본토와 에게해 섬들은 물론 유럽 전역을 연결하는 풀서비스 항공사입니다. 2010년 <em>Star Alliance</em>에 가입하여 글로벌 네트워크의 혜택을 승객들에게 제공하고 있습니다.<br><br>
-      에게해의 맑은 하늘과 바다를 모티브로 한 파란색 라이브러리가 특징이며, 다수의 국제 항공사 만족도 평가에서 유럽 최상위권을 기록하고 있습니다. 그리스 특유의 <em>필로세니아(Philotimo, 환대 정신)</em>를 비행 서비스에 담아내는 것이 핵심 가치입니다.
-    </div>
-  </div>
+🇬🇷 그리스의 국적항공사, <strong>Aegean Airlines(에게항공)</strong>을 소개합니다!
 
-  <div class="section">
-    <h2>✈️ 주요 정보</h2>
-    <div class="info-grid">
-      <div class="info-item">
-        <span class="icon">🛫</span>
-        <div>
-          <div class="label">허브 공항</div>
-          <div class="value">아테네 국제공항 (ATH)</div>
-        </div>
-      </div>
-      <div class="info-item">
-        <span class="icon">🤝</span>
-        <div>
-          <div class="label">동맹</div>
-          <div class="value">Star Alliance</div>
-        </div>
-      </div>
-      <div class="info-item">
-        <span class="icon">🛩️</span>
-        <div>
-          <div class="label">운용 기재</div>
-          <div class="value">A320neo, A321neo, ATR 72-600</div>
-        </div>
-      </div>
-      <div class="info-item">
-        <span class="icon">🗺️</span>
-        <div>
-          <div class="label">취항지 수</div>
-          <div class="value">150+ 도시 (44개국)</div>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:18px">
-      <div class="label" style="font-size:.72rem;color:#6b7a90;font-weight:600;letter-spacing:.3px;margin-bottom:8px">📍 주요 노선</div>
-      <div class="route-list">
-        <span>아테네 ↔ 서울(인천)</span>
-        <span>산토리니</span>
-        <span>미코노스</span>
-        <span>크레타</span>
-        <span>로마</span>
-        <span>파리</span>
-        <span>런던</span>
-        <span>프랑크푸르트</span>
-        <span>뮌헨</span>
-        <span>취리히</span>
-        <span>빈</span>
-        <span>아姆스테르담</span>
-        <span>이스탄불</span>
-        <span>두바이</span>
-        <span>텔아비브</span>
-      </div>
-    </div>
-  </div>
+1999년 설립된 Aegean Airlines는 그리스 최대 항공사로서, <strong>아테네 국제공항(ATH)</strong>을 허브로 그리스 본토와 에게해 섬들은 물론 유럽 전역 150개 이상 도시를 연결하는 풀서비스 항공사입니다. 2010년 <strong>Star Alliance</strong>에 가입하여 글로벌 네트워크의 혜택을 승객들에게 제공하고 있습니다.
 
-  <div class="section">
-    <h2>✨ 특징</h2>
-    <div class="desc">
-      매년 여름 시즌, 산토리니와 미코노스 같은 이국적인 에게해 섬들을 연결하는 항공편이 큰 인기를 끕니다. 최신 A320neo 기종을 도입하여 연비와 탑승객 컴포트를 동시에 개선했으며, 그리스 와인과 전통 요리를 비행 중에 맛볼 수 있는 것도 특징입니다. 유럽 내 쇼트커넥트와 요르단, 이집트 등 중동 노선까지 확장하며 성장 중인 항공사입니다.
-    </div>
-  </div>
+에게해의 맑은 하늘과 바다를 모티브로 한 파란색 라이브러리가 특징이며, 다수의 국제 항공사 만족도 평가에서 유럽 최상위권을 기록하고 있습니다. 그리스 특유의 <strong>필로세니아(Philotimo, 환대 정신)</strong>를 비행 서비스에 담아내는 것이 핵심 가치입니다.
 
-  <div class="cta">
-    <p>📍 Aegean Airlines는 <strong style="color:#e0e4ed">GP-275</strong>를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.<br><br>
-    APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 <strong style="color:#e0e4ed">Aegean Airlines (A3)</strong> 항공권의 BSP 발권을 지원합니다.</p>
-    <div class="email">📧 문의: sales@apg-ga.co.kr</div>
-  </div>
+🛫 허브 공항: 아테네 국제공항 (ATH)
+🤝 동맹: Star Alliance
+🛩️ 운용 기재: A320neo, A321neo, ATR 72-600
+🗺️ 취항지: 150+ 도시 (44개국)
 
-</div>
+📍 주요 노선: 아테네 ↔ 산토리니, 미코노스, 크레타, 로마, 파리, 런던, 프랑크푸르트, 뮌헨, 취리히, 빈, 이스탄불, 두바이, 텔아비브 등
 
-<div class="hashtags">
-  <span>#AegeanAirlines</span>
-  <span>#에게항공</span>
-  <span>#그리스여행</span>
-  <span>#산토리니</span>
-  <span>#미코노스</span>
-  <span>#아테네</span>
-  <span>#StarAlliance</span>
-  <span>#APGKorea</span>
-  <span>#GP275</span>
-  <span>#항공사소개</span>
+✨ 매년 여름 시즌, 산토리니와 미코노스 같은 이국적인 에게해 섬들을 연결하는 항공편이 큰 인기를 끕니다. 최신 A320neo 기종으로 연비와 탑승객 컴포트를 동시에 개선했으며, 비행 중 그리스 와인과 전통 요리를 맛볼 수 있는 것도 특징입니다. 유럽 내 쇼트커넥트와 중동 노선까지 확장하며 성장 중인 항공사입니다.
+
+📍Aegean Airlines는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Aegean Airlines (A3) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#AegeanAirlines #에게항공 #그리스여행 #산토리니 #미코노스 #아테네 #StarAlliance #APGKorea #GP275 #항공사소개</div>
+
 </div>
 
 <div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
 
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
 </body>
 </html>
