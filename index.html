@@ -3,67 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APG Korea — 내부 문서함</title>
+<title>APG Korea — GP-275 항공사 소개 컨텐츠</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#f8f9fa;color:#333}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
 header{background:linear-gradient(135deg,#0a1628,#1a2744);color:#fff;padding:48px 24px 36px;text-align:center}
 header h1{font-size:1.8rem;font-weight:900;margin-bottom:6px;letter-spacing:-0.5px}
-header .sub{font-size:0.85rem;opacity:.5;margin-bottom:4px}
+header .sub{font-size:.85rem;opacity:.5;margin-bottom:4px}
 header .badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:4px 14px;border-radius:20px;font-size:.75rem;margin-top:10px}
-.container{max-width:960px;margin:0 auto;padding:40px 20px}
-.section{margin-bottom:40px}
-.section-title{font-size:13px;font-weight:700;color:#6a8aaa;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #e5e7eb}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,.06);text-decoration:none;color:inherit;display:block;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
-.card img{width:100%;height:240px;object-fit:cover}
-.card-body{padding:20px}
-.card-body h3{font-size:1.1rem;font-weight:800;margin-bottom:2px;display:flex;align-items:center;gap:6px}
-.card-body h3 .code{color:#e63946;font-weight:700;font-size:.85rem}
-.card-body .hub{color:#888;font-size:.8rem;margin-bottom:10px}
-.card-body p{font-size:.9rem;line-height:1.65;color:#555}
-.card-body .meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
-.card-body .meta span{background:#eef2ff;color:#4f46e5;padding:3px 10px;border-radius:16px;font-size:.75rem;font-weight:600}
-.footer{text-align:center;padding:30px;color:#bbb;font-size:.75rem}
+.search{max-width:480px;margin:24px auto 0;position:relative}
+.search input{width:100%;padding:12px 16px 12px 40px;border-radius:10px;border:1px solid #2a3555;background:#141825;color:#e0e4ed;font-size:.9rem;outline:none}
+.search input:focus{border-color:#6e8efb}
+.search::before{content:'🔍';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:.9rem}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px}
+.region{margin-bottom:40px}
+.region-title{font-size:.8rem;font-weight:700;color:#6e8efb;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1e2435;display:flex;align-items:center;gap:8px}
+.region-title .count{background:#1e2435;color:#6e8efb;padding:2px 10px;border-radius:10px;font-size:.7rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.card{background:#141825;border:1px solid #1e2435;border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#6e8efb;transform:translateY(-1px)}
+.card .code{background:#e63946;color:#fff;padding:3px 8px;border-radius:6px;font-size:.7rem;font-weight:800;min-width:28px;text-align:center;flex-shrink:0}
+.card .name{font-size:.85rem;font-weight:600;color:#cdd5e0;line-height:1.3}
+.footer{text-align:center;padding:30px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>✈️ APG Korea</h1>
-  <div class="sub">내부 문서함 · Internal Documents</div>
-  <div class="badge">GP-275 Validating Carrier · 157 Airlines</div>
+  <h1>✈️ APG Korea — GP-275 항공사</h1>
+  <div class="sub">인스타그램 소개 컨텐츠 모음</div>
+  <div class="badge">157 Airlines · GP-275 Validating Carrier</div>
+  <div class="search"><input type="text" id="search" placeholder="항공사 검색..." oninput="filterCards()"></div>
 </header>
 
 <div class="container">
 
-  <div class="section">
-    <div class="section-title">🛫 항공사 소개 — Instagram 컨텐츠</div>
-    <div class="grid" id="airlines-grid">
-
-      <a class="card" href="airlines/aegean-airlines.html">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/SX-NEC_A320NEO_Aegean_LHR_4.11.20.jpg" alt="Aegean Airlines">
-        <div class="card-body">
-          <h3>에게항공 <span class="code">A3</span></h3>
-          <div class="hub">허브: 아테네 (ATH) · 그리스</div>
-          <p>그리스 국적항공사. 스타얼라이언스 멤버로 유럽 150+ 도시 연결. 에게해의 푸른 하늘을 담은 서비스.</p>
-          <div class="meta">
-            <span>Star Alliance</span>
-            <span>유럽</span>
-            <span>A320neo</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
+<!-- 🌏 아시아 & 오세아니아 -->
+<div class="region">
+  <div class="region-title">🌏 아시아 & 오세아니아 <span class="count">35</span></div>
+  <div class="grid">
+    <a class="card" href="airlines/korean-air.html"><span class="code">KE</span><span class="name">Korean Air</span></a>
+    <a class="card" href="airlines/jeju-air.html"><span class="code">7C</span><span class="name">Jeju Air</span></a>
+    <a class="card" href="airlines/thai-airways.html"><span class="code">TG</span><span class="name">Thai Airways</span></a>
+    <a class="card" href="airlines/vietnam-airlines.html"><span class="code">VN</span><span class="name">Vietnam Airlines</span></a>
+    <a class="card" href="airlines/vietjet-air.html"><span class="code">VJ</span><span class="name">VietJet Air</span></a>
+    <a class="card" href="airlines/china-airlines.html"><span class="code">CI</span><span class="name">China Airlines</span></a>
+    <a class="card" href="airlines/malaysia-airlines.html"><span class="code">MH</span><span class="name">Malaysia Airlines</span></a>
+    <a class="card" href="airlines/philippine-airlines.html"><span class="code">PR</span><span class="name">Philippine Airlines</span></a>
+    <a class="card" href="airlines/garuda-indonesia.html"><span class="code">GA</span><span class="name">Garuda Indonesia</span></a>
+    <a class="card" href="airlines/bangkok-airways.html"><span class="code">PG</span><span class="name">Bangkok Airways</span></a>
+    <a class="card" href="airlines/srilankan-airlines.html"><span class="code">UL</span><span class="name">SriLankan Airlines</span></a>
+    <a class="card" href="airlines/fiji-airways.html"><span class="code">FJ</span><span class="name">Fiji Airways</span></a>
+    <a class="card" href="airlines/batik-air-id.html"><span class="code">ID</span><span class="name">Batik Air (ID)</span></a>
+    <a class="card" href="airlines/batik-air-malaysia.html"><span class="code">OD</span><span class="name">Batik Air Malaysia</span></a>
+    <a class="card" href="airlines/hong-kong-airlines.html"><span class="code">HX</span><span class="name">Hong Kong Airlines</span></a>
+    <a class="card" href="airlines/greater-bay-airlines.html"><span class="code">HB</span><span class="name">Greater Bay Airlines</span></a>
+    <a class="card" href="airlines/royal-brunei-airlines.html"><span class="code">BI</span><span class="name">Royal Brunei</span></a>
+    <a class="card" href="airlines/spicejet.html"><span class="code">SG</span><span class="name">SpiceJet</span></a>
+    <a class="card" href="airlines/thai-lion-air.html"><span class="code">SL</span><span class="name">Thai Lion Air</span></a>
+    <a class="card" href="airlines/thai-vietjet-air.html"><span class="code">VZ</span><span class="name">Thai VietJet Air</span></a>
+    <a class="card" href="airlines/beijing-capital-airlines.html"><span class="code">JD</span><span class="name">Beijing Capital Airlines</span></a>
+    <a class="card" href="airlines/sichuan-airlines.html"><span class="code">3U</span><span class="name">Sichuan Airlines</span></a>
+    <a class="card" href="airlines/shandong-airlines.html"><span class="code">SC</span><span class="name">Shandong Airlines</span></a>
+    <a class="card" href="airlines/donghai-airlines.html"><span class="code">DZ</span><span class="name">Donghai Airlines</span></a>
+    <a class="card" href="airlines/kunming-airlines.html"><span class="code">KY</span><span class="name">Kunming Airlines</span></a>
+    <a class="card" href="airlines/lao-airlines.html"><span class="code">QV</span><span class="name">Lao Airlines</span></a>
+    <a class="card" href="airlines/nepal-airlines.html"><span class="code">RA</span><span class="name">Nepal Airlines</span></a>
+    <a class="card" href="airlines/air-cambodia.html"><span class="code">K6</span><span class="name">Air Cambodia</span></a>
+    <a class="card" href="airlines/myanmar-airways-intl.html"><span class="code">8M</span><span class="name">Myanmar Airways Intl</span></a>
+    <a class="card" href="airlines/solomon-airlines.html"><span class="code">IE</span><span class="name">Solomon Airlines</span></a>
+    <a class="card" href="airlines/png-air.html"><span class="code">CG</span><span class="name">PNG Air</span></a>
+    <a class="card" href="airlines/biman-bangladesh-airlines.html"><span class="code">BG</span><span class="name">Biman Bangladesh</span></a>
+    <a class="card" href="airlines/beond-airlines.html"><span class="code">B4</span><span class="name">beOnd</span></a>
+    <a class="card" href="airlines/maswings.html"><span class="code">MH</span><span class="name">MASWings</span></a>
+    <a class="card" href="airlines/fits-air.html"><span class="code">8D</span><span class="name">FitsAir</span></a>
   </div>
+</div>
+
+<!-- 🌎 아메리카 -->
+<div class="region">
+  <div class="region-title">🌎 아메리카 <span class="count">32</span></div>
+  <div class="grid">
+    <a class="card" href="airlines/avianca.html"><span class="code">AV</span><span class="name">Avianca</span></a>
+    <a class="card" href="airlines/avianca-costa-rica.html"><span class="code">LR</span><span class="name">Avianca Costa Rica</span></a>
+    <a class="card" href="airlines/avianca-ecuador.html"><span class="code">2K</span><span class="name">Avianca Ecuador</span></a>
+    <a class="card" href="airlines/avianca-peru.html"><span class="code">T0</span><span class="name">Avianca Peru</span></a>
+    <a class="card" href="airlines/latam-airlines.html"><span class="code">LA</span><span class="name">LATAM Airlines</span></a>
+    <a class="card" href="airlines/latam-airlines-brazil.html"><span class="code">JJ</span><span class="name">LATAM Brazil</span></a>
+    <a class="card" href="airlines/latam-airlines-colombia.html"><span class="code">4C</span><span class="name">LATAM Colombia</span></a>
+    <a class="card" href="airlines/latam-airlines-ecuador.html"><span class="code">XL</span><span class="name">LATAM Ecuador</span></a>
+    <a class="card" href="airlines/latam-airlines-paraguay.html"><span class="code">PZ</span><span class="name">LATAM Paraguay</span></a>
+    <a class="card" href="airlines/latam-airlines-peru.html"><span class="code">LP</span><span class="name">LATAM Peru</span></a>
+    <a class="card" href="airlines/hawaiian-airlines.html"><span class="code">HA</span><span class="name">Hawaiian Airlines</span></a>
+    <a class="card" href="airlines/gol-linhas-aereas.html"><span class="code">G3</span><span class="name">Gol Linhas Aereas</span></a>
+    <a class="card" href="airlines/porter-airlines.html"><span class="code">PD</span><span class="name">Porter Airlines</span></a>
+    <a class="card" href="airlines/sky-airline.html"><span class="code">H2</span><span class="name">Sky Airline</span></a>
+    <a class="card" href="airlines/surinam-airways.html"><span class="code">PY</span><span class="name">Surinam Airways</span></a>
+    <a class="card" href="airlines/taca.html"><span class="code">TA</span><span class="name">TACA</span></a>
+    <a class="card" href="airlines/air-north.html"><span class="code">4N</span><span class="name">Air North</span></a>
+    <a class="card" href="airlines/air-panama.html"><span class="code">7P</span><span class="name">Air Panama</span></a>
+    <a class="card" href="airlines/amaszonas.html"><span class="code">Z8</span><span class="name">Amaszonas</span></a>
+    <a class="card" href="airlines/amaszonas-uruguay.html"><span class="code">Z7</span><span class="name">Amaszonas Uruguay</span></a>
+    <a class="card" href="airlines/avior-airlines.html"><span class="code">9V</span><span class="name">Avior Airlines</span></a>
+    <a class="card" href="airlines/calm-air.html"><span class="code">MO</span><span class="name">Calm Air</span></a>
+    <a class="card" href="airlines/clic-air.html"><span class="code">VE</span><span class="name">Clic Air</span></a>
+    <a class="card" href="airlines/cm-airlines.html"><span class="code">H5</span><span class="name">CM Airlines</span></a>
+    <a class="card" href="airlines/ecojet.html"><span class="code">8J</span><span class="name">Ecojet</span></a>
+    <a class="card" href="airlines/intercaribbean-airways.html"><span class="code">JY</span><span class="name">InterCaribbean Airways</span></a>
+    <a class="card" href="airlines/lanhsa.html"><span class="code">—</span><span class="name">LANHSA</span></a>
+    <a class="card" href="airlines/pal-airlines.html"><span class="code">PB</span><span class="name">PAL Airlines</span></a>
+    <a class="card" href="airlines/porter-airlines-canada.html"><span class="code">PD</span><span class="name">Porter Airlines Canada</span></a>
+    <a class="card" href="airlines/sky-airlines-peru.html"><span class="code">H8</span><span class="name">Sky Airlines Peru</span></a>
+    <a class="card" href="airlines/tag.html"><span class="code">5U</span><span class="name">TAG</span></a>
+  </div>
+</div>
+
+<!-- 🌍 유럽 -->
+<div class="region">
+  <div class="region-title">🌍 유럽 <span class="count">34</span></div>
+  <div class="grid">
+    <a class="card" href="airlines/aegean-airlines.html"><span class="code">A3</span><span class="name">Aegean Airlines</span></a>
+    <a class="card" href="airlines/ita-airways.html"><span class="code">AZ</span><span class="name">ITA Airways</span></a>
+    <a class="card" href="airlines/tap-air-portugal.html"><span class="code">TP</span><span class="name">TAP Air Portugal</span></a>
+    <a class="card" href="airlines/air-baltic.html"><span class="code">BT</span><span class="name">Air Baltic</span></a>
+    <a class="card" href="airlines/air-malta.html"><span class="code">KM</span><span class="name">Air Malta</span></a>
+    <a class="card" href="airlines/croatia-airlines.html"><span class="code">OU</span><span class="name">Croatia Airlines</span></a>
+    <a class="card" href="airlines/cyprus-airways.html"><span class="code">CY</span><span class="name">Cyprus Airways</span></a>
+    <a class="card" href="airlines/air-corsica.html"><span class="code">XK</span><span class="name">Air Corsica</span></a>
+    <a class="card" href="airlines/luxair.html"><span class="code">LG</span><span class="name">Luxair</span></a>
+    <a class="card" href="airlines/air-austral.html"><span class="code">UU</span><span class="name">Air Austral</span></a>
+    <a class="card" href="airlines/air-carabes.html"><span class="code">TX</span><span class="name">Air Caraïbes</span></a>
+    <a class="card" href="airlines/air-tahiti-nui.html"><span class="code">TN</span><span class="name">Air Tahiti Nui</span></a>
+    <a class="card" href="airlines/air-calin.html"><span class="code">SB</span><span class="name">Air Calin</span></a>
+    <a class="card" href="airlines/air-connect.html"><span class="code">KS</span><span class="name">Air Connect</span></a>
+    <a class="card" href="airlines/air-moldova.html"><span class="code">9U</span><span class="name">Air Moldova</span></a>
+    <a class="card" href="airlines/norse-atlantic.html"><span class="code">N0</span><span class="name">Norse Atlantic</span></a>
+    <a class="card" href="airlines/norse-atlantic-uk.html"><span class="code">Z0</span><span class="name">Norse Atlantic UK</span></a>
+    <a class="card" href="airlines/french-bee.html"><span class="code">BF</span><span class="name">French Bee</span></a>
+    <a class="card" href="airlines/volotea.html"><span class="code">V7</span><span class="name">Volotea</span></a>
+    <a class="card" href="airlines/corsair.html"><span class="code">SS</span><span class="name">Corsair</span></a>
+    <a class="card" href="airlines/tarom.html"><span class="code">RO</span><span class="name">TAROM</span></a>
+    <a class="card" href="airlines/ukraine-intl.html"><span class="code">PS</span><span class="name">Ukraine Intl</span></a>
+    <a class="card" href="airlines/georgian-airways.html"><span class="code">A9</span><span class="name">Georgian Airways</span></a>
+    <a class="card" href="airlines/olympic-air.html"><span class="code">OA</span><span class="name">Olympic Air</span></a>
+    <a class="card" href="airlines/apg-airlines.html"><span class="code">GP</span><span class="name">APG Airlines</span></a>
+    <a class="card" href="airlines/asl-airlines.html"><span class="code">5O</span><span class="name">ASL Airlines</span></a>
+    <a class="card" href="airlines/binter-canarias.html"><span class="code">NT</span><span class="name">Binter Canarias</span></a>
+    <a class="card" href="airlines/blue-air.html"><span class="code">0B</span><span class="name">Blue Air</span></a>
+    <a class="card" href="airlines/dan-air.html"><span class="code">DN</span><span class="name">Dan Air</span></a>
+    <a class="card" href="airlines/albastar.html"><span class="code">AP</span><span class="name">AlbaStar</span></a>
+    <a class="card" href="airlines/amelia.html"><span class="code">8R</span><span class="name">Amelia</span></a>
+    <a class="card" href="airlines/red-wings.html"><span class="code">WZ</span><span class="name">Red Wings</span></a>
+    <a class="card" href="airlines/sata-air-acores.html"><span class="code">SP</span><span class="name">SATA Air Açores</span></a>
+    <a class="card" href="airlines/sata-azores-airlines.html"><span class="code">S4</span><span class="name">SATA Azores Airlines</span></a>
+  </div>
+</div>
+
+<!-- 🕌 중동 & 중앙아시아 -->
+<div class="region">
+  <div class="region-title">🕌 중동 & 중앙아시아 <span class="count">17</span></div>
+  <div class="grid">
+    <a class="card" href="airlines/turkish-airlines.html"><span class="code">TK</span><span class="name">Turkish Airlines</span></a>
+    <a class="card" href="airlines/egyptair.html"><span class="code">MS</span><span class="name">Egyptair</span></a>
+    <a class="card" href="airlines/gulf-air.html"><span class="code">GF</span><span class="name">Gulf Air</span></a>
+    <a class="card" href="airlines/flydubai.html"><span class="code">FZ</span><span class="name">FlyDubai</span></a>
+    <a class="card" href="airlines/saudi-arabian-airlines.html"><span class="code">SV</span><span class="name">Saudi Arabian Airlines</span></a>
+    <a class="card" href="airlines/royal-jordanian.html"><span class="code">RJ</span><span class="name">Royal Jordanian</span></a>
+    <a class="card" href="airlines/kuwait-airways.html"><span class="code">KU</span><span class="name">Kuwait Airways</span></a>
+    <a class="card" href="airlines/air-astana.html"><span class="code">KC</span><span class="name">Air Astana</span></a>
+    <a class="card" href="airlines/azerbaijan-airlines.html"><span class="code">J2</span><span class="name">Azerbaijan Airlines</span></a>
+    <a class="card" href="airlines/arkia.html"><span class="code">IZ</span><span class="name">Arkia</span></a>
+    <a class="card" href="airlines/middle-east-airlines.html"><span class="code">ME</span><span class="name">Middle East Airlines</span></a>
+    <a class="card" href="airlines/uzbekistan-airways.html"><span class="code">HY</span><span class="name">Uzbekistan Airways</span></a>
+    <a class="card" href="airlines/somon-air.html"><span class="code">SZ</span><span class="name">Somon Air</span></a>
+    <a class="card" href="airlines/kam-air.html"><span class="code">RQ</span><span class="name">Kam Air</span></a>
+    <a class="card" href="airlines/jordan-aviation.html"><span class="code">R5</span><span class="name">Jordan Aviation</span></a>
+    <a class="card" href="airlines/nesma-airlines.html"><span class="code">NE</span><span class="name">Nesma Airlines</span></a>
+    <a class="card" href="airlines/scat-airlines.html"><span class="code">DV</span><span class="name">SCAT Airlines</span></a>
+  </div>
+</div>
+
+<!-- 🌍 아프리카 -->
+<div class="region">
+  <div class="region-title">🌍 아프리카 <span class="count">30</span></div>
+  <div class="grid">
+    <a class="card" href="airlines/ethiopian-airlines.html"><span class="code">ET</span><span class="name">Ethiopian Airlines</span></a>
+    <a class="card" href="airlines/kenya-airways.html"><span class="code">KQ</span><span class="name">Kenya Airways</span></a>
+    <a class="card" href="airlines/south-african-airways.html"><span class="code">SA</span><span class="name">South African Airways</span></a>
+    <a class="card" href="airlines/royal-air-maroc.html"><span class="code">AT</span><span class="name">Royal Air Maroc</span></a>
+    <a class="card" href="airlines/rwandair.html"><span class="code">WB</span><span class="name">Rwandair</span></a>
+    <a class="card" href="airlines/air-algerie.html"><span class="code">AH</span><span class="name">Air Algérie</span></a>
+    <a class="card" href="airlines/air-seychelles.html"><span class="code">HM</span><span class="name">Air Seychelles</span></a>
+    <a class="card" href="airlines/air-senegal.html"><span class="code">HC</span><span class="name">Air Senegal</span></a>
+    <a class="card" href="airlines/air-peace.html"><span class="code">P4</span><span class="name">Air Peace</span></a>
+    <a class="card" href="airlines/air-tanzania.html"><span class="code">TC</span><span class="name">Air Tanzania</span></a>
+    <a class="card" href="airlines/taag-angola-airlines.html"><span class="code">DT</span><span class="name">TAAG Angola Airlines</span></a>
+    <a class="card" href="airlines/afrijet.html"><span class="code">J7</span><span class="name">Afrijet</span></a>
+    <a class="card" href="airlines/air-burkina.html"><span class="code">2J</span><span class="name">Air Burkina</span></a>
+    <a class="card" href="airlines/air-cote-d-ivoire.html"><span class="code">HF</span><span class="name">Air Côte d'Ivoire</span></a>
+    <a class="card" href="airlines/asky.html"><span class="code">KP</span><span class="name">ASKY Airlines</span></a>
+    <a class="card" href="airlines/ceiba-intercontinental.html"><span class="code">C2</span><span class="name">Ceiba Intercontinental</span></a>
+    <a class="card" href="airlines/cemair.html"><span class="code">5Z</span><span class="name">CemAir</span></a>
+    <a class="card" href="airlines/daallo-airlines.html"><span class="code">D3</span><span class="name">Daallo Airlines</span></a>
+    <a class="card" href="airlines/eswatini-air.html"><span class="code">RN</span><span class="name">Eswatini Air</span></a>
+    <a class="card" href="airlines/groupe-transair.html"><span class="code">R2</span><span class="name">Groupe Transair</span></a>
+    <a class="card" href="airlines/ibom-air.html"><span class="code">QI</span><span class="name">Ibom Air</span></a>
+    <a class="card" href="airlines/jambojet.html"><span class="code">JM</span><span class="name">Jambojet</span></a>
+    <a class="card" href="airlines/lam-mozambique.html"><span class="code">TM</span><span class="name">LAM Mozambique</span></a>
+    <a class="card" href="airlines/madagascar-airlines.html"><span class="code">MD</span><span class="name">Madagascar Airlines</span></a>
+    <a class="card" href="airlines/mauritania-airlines.html"><span class="code">L6</span><span class="name">Mauritania Airlines</span></a>
+    <a class="card" href="airlines/precision-air.html"><span class="code">PW</span><span class="name">Precision Air</span></a>
+    <a class="card" href="airlines/tacv-cabo-verde.html"><span class="code">VR</span><span class="name">TACV Cabo Verde</span></a>
+    <a class="card" href="airlines/uganda-airlines.html"><span class="code">UR</span><span class="name">Uganda Airlines</span></a>
+  </div>
+</div>
 
 </div>
 
-<div class="footer">
-  © 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs
-</div>
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
 
+<script>
+function filterCards(){
+  const q=document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(c=>{
+    const name=c.querySelector('.name').textContent.toLowerCase();
+    const code=c.querySelector('.code').textContent.toLowerCase();
+    c.style.display=(name.includes(q)||code.includes(q))?'':'none';
+  });
+}
+</script>
 </body>
 </html>
