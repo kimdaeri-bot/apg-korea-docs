@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amelia 8R — APG Korea</title>
 <style>
-
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
 .back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
@@ -19,57 +18,38 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;b
 .copy-btn:hover{background:#5a7de8}
 .copy-btn.copied{background:#22c55e}
 .footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
-
 </style>
 </head>
 <body>
-
 <a class="back" href="../index.html">← APG Korea 문서함</a>
-
-<div class="hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/F-GKPO_-_ATR_72-500_-_Amelia_%2849082864707%29.jpg/1280px-F-GKPO_-_ATR_72-500_-_Amelia_%2849082864707%29.jpg" alt="Amelia ATR 72-500">
-</div>
-
+<div class="hero"><img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Wiktionary-logo-en-v2.svg" alt="Amelia"></div>
 <div class="content">
   <div class="copy-area" id="copyText">
-    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Amelia
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Amelia (8R)
 
-🇫🇷 프랑스의 항공사, <strong>Amelia(아멜리아)</strong>을(를) 소개합니다!
+🇫🇷 프랑스의 국적항공사, <strong>Amelia(아멜리아)</strong>을 소개합니다!
 
-1976년 설립된 Amelia은(는) <strong>파리 샤를 드골 공항 (CDG)</strong>을 허브로 운항하는 항공사로, 프랑스 지역 항공사로, 이전 Régional Airlines를 이어받아 프랑스 국내 및 유럽 지역 노선을 운항합니다.
+프랑스 지역 항공사.
 
-🛫 허브 공항: 파리 샤를 드골 공항 (CDG)
-🤝 동맹: 독립
-🛩️ 운용 기재: A319, A320, ATR 72-500
-🗺️ 취항지: 30+ 도시
+🛫 허브 공항: 파리(르부르제) (LBG)
+🤝 항공사 얼라이언스: 없음
+🛩️ 운용 기재: Airbus A320,ATR 42/72
+🗺️ 취항지: 20개 도시
 
-📍 주요 노선: 파리(CDG) ↔ 코르시카, 니스, 마르세유, 런던, 밀라노 등
+📍 주요 노선: 파리 ↔ 니스,리옹,마르세유
 
-✨ 에어프랑스와 코드쉐어로 프랑스 항공망의 지역 연결 고리 역할을 합니다.
+✨ 프랑스를 대표하는 항공사로서, 20개 이상의 목적지를 연결합니다.
 
-📍Amelia은(는) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+📍Amelia은 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
 
 APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Amelia (8R) 항공권의 BSP 발권을 지원합니다.
 
 📧 문의: sales@apg-ga.co.kr
 
-#Amelia #아멜리아 #프랑스항공 #파리 #코르시카 #지역항공 #APGKorea #GP275</div>
-
+#Amelia #아멜리아 #APGKorea #GP275 #항공사소개
 </div>
-
+</div>
 <div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
-
-<script>
-function copyText(){
-  const el=document.getElementById("copyText");
-  const text=el.innerText.replace("📋 복사","").trim();
-  navigator.clipboard.writeText(text).then(()=>{
-    const btn=el.querySelector(".copy-btn");
-    btn.textContent="✅ 복사됨!";
-    btn.classList.add("copied");
-    setTimeout(()=>{btn.textContent="📋 복사";btn.classList.remove("copied");},2000);
-  });
-}
-</script>
+<script>function copyText(){var el=document.getElementById('copyText');var text=el.innerText.replace('\ud83d\udccb \ubcf5\uc0ac','').trim();navigator.clipboard.writeText(text).then(function(){var btn=el.querySelector('.copy-btn');btn.textContent='\u2705 \ubcf5\uc0ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4!';btn.classList.add('copied');setTimeout(function(){btn.textContent='\ud83d\udccb \ubcf5\uc0ac';btn.classList.remove('copied');},2000);});}</script>
 </body>
 </html>
