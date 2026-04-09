@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porter Airlines PD — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Porter_Airlines_De_Havilland_Canada_DHC-8-402Q_C-GKQF_%28cropped%29.jpg/1280px-Porter_Airlines_De_Havilland_Canada_DHC-8-402Q_C-GKQF_%28cropped%29.jpg" alt="Porter Airlines PD">
+</div>
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Porter Airlines PD
+
+🇨🇦 캐나다의 항공사, <strong>Porter Airlines(포터항공)</strong>를 소개합니다!
+
+2006년 설립된 Porter Airlines는 캐나다의 프리미엄 지역 항공사로, <strong>빌리 비숍 토론토 시티 공항(YTZ)</strong>을 허브로 캐나다와 미국 북동부를 연결합니다. 토론토 도심 한가운데 위치한 공항에서 출발하는 편리함과 프리미엄 서비스로 인기를 끌고 있습니다.
+
+🛫 허브 공항: 빌리 비숍 토론토 시티 공항 (YTZ), 오타와 (YOW)
+🤝 동맹: 독자 운영
+🛩️ 운용 기재: De Havilland Dash 8-400, Embraer E195-E2
+🗺️ 취항지: 30+ 도시
+
+📍 주요 노선: 토론토(시티) ↔ 몬트리올, 오타와, 뉴욕(뉴워크), 보스턴, 시카고(미드웨이), 워싱턴, 할리팩스 등
+
+✨ 토론토 섬에서 출발하는 특별한 경험과 무료 기내식(와인, 맥주 포함), 프리미엄 좌석이 특징입니다. Porter Escapes 패키지로 항공+호텔 할인도 가능하며, 최근 Embraer E195-E2 도입으로 장거리 노선도 확대하고 있습니다.
+
+📍Porter Airlines는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Porter Airlines (PD) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#PorterAirlines #포터항공 #캐나다여행 #토론토 #몬트리올 #뉴욕 #프리미엄항공 #APGKorea #GP275 #항공사소개</div>
+</div>
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

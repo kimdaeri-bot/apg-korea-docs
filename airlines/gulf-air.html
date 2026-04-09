@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gulf Air GF — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Gulf_Air_Boeing_787-9_Dreamliner_A9C-FGA_%28cropped%29.jpg/1280px-Gulf_Air_Boeing_787-9_Dreamliner_A9C-FGA_%28cropped%29.jpg" alt="Gulf Air">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Gulf Air
+
+🇧🇭 바레인의 국적항공사, <strong>Gulf Air</strong>을(를) 소개합니다!
+
+1950년 설립된 Gulf Air은(는) <strong>바레인 국제공항 (BAH)</strong>을(를) 허브로 중동, 유럽, 아시아 50+ 도시을(를) 연결하는 항공사입니다.
+
+중동에서 가장 오래된 항공사 중 하나로, 걸프 만의 항공 역사를 함께해 온 전통 있는 항공사입니다. 걸프 코오퍼레이션 시절 4개국(바레인·오만·카타르·UAE)의 공동 국적항공이었던 역사를 간직하고 있습니다.
+
+🛫 허브 공항: 바레인 국제공항 (BAH)
+🤝 동맹: 
+🛩️ 운용 기재: A320, A320neo, A321neo, B787-9
+🗺️ 취항지: 바레인 ↔ 런던, 파리, 프랑크푸르트, 이스탄불, 두바이, 리야드, 뭄바이, 방콕, 마닐라, 카라치 등
+
+📍 주요 노선: 중동, 유럽, 아시아 50+ 도시
+
+✨ 중동의 숨겨진 보석 바레인을 대표하는 항공사로, 최신 B787-9와 A320neo 기종으로 간판을 새롭게 하고 있습니다. Falcon Flyer 프로그램과 걸프 공항 라운지 등 프리미엄 서비스가 특징입니다.
+
+📍Gulf Air는(은) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Gulf Air (GF) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#GulfAir #걸프에어 #바레인 #중동여행 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

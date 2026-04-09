@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amaszonas Z8 — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Amaszonas_Boeing_737-2A8Adv%2C_CP-2588_%2848500786086%29.jpg/1280px-Amaszonas_Boeing_737-2A8Adv%2C_CP-2588_%2848500786086%29.jpg" alt="Amaszonas Z8">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Amaszonas Z8
+
+🇧🇴 볼리비아의 항공사, <strong>Amaszonas(아마조나스)</strong>를 소개합니다!
+
+2000년 설립된 Amaszonas는 볼리비아의 대표적인 항공사로, <strong>코차밤바 국제공항(CBB)</strong>을 허브로 볼리비아 국내와 인근 남미 국가를 연결합니다. 아마존 지역의 지리적 특성상 항공 교통이 필수적인 지역에서 중요한 역할을 수행합니다.
+
+🛫 허브 공항: 코차밤바 국제공항 (CBB)
+🤝 동맹: 독자 운영
+🛩️ 운용 기재: Boeing 737-200, Bombardier CRJ-200
+🗺️ 취항지: 15+ 도시
+
+📍 주요 노선: 코차밤바 ↔ 라파스, 산타크루스, 수크레, 트리니다드, 푸에르토스우아레스, 코비하 등
+
+✨ 볼리비아의 아름다운 안데스 산맥과 아마존 열대우림 지역을 연결하는 항공사로, 지역 주민들에게 없어서는 안 될 교통 수단입니다. 볼리비아 특유의 고지대 풍경을空中에서 감상할 수 있습니다.
+
+📍Amaszonas는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Amaszonas (Z8) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#Amaszonas #아마조나스 #볼리비아여행 #코차밤바 #안데스 #남미 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

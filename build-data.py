@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+"""Build all airline pages + index.html"""
+import json, os
+
+D = os.path.dirname(os.path.abspath(__file__))
+ADIR = os.path.join(D, "airlines")
+os.makedirs(ADIR, exist_ok=True)
+
+# Flags
+def fl(r): # regional flag emoji
+    return {"CA":"🇨🇦","PA":"🇵🇦","BO":"🇧🇴","UY":"🇺🇾","CO":"🇨🇴","CR":"🇨🇷","EC":"🇪🇨","PE":"🇵🇪",
+            "VE":"🇻🇪","HN":"🇭🇳","BR":"🇧🇷","US":"🇺🇸","TC":"🇹🇨","CL":"🇨🇱","PG":"🇵🇾","SR":"🇸🇷",
+            "SV":"🇸🇻","GT":"🇬🇹","KH":"🇰🇭","TH":"🇹🇭","ID":"🇮🇩","MY":"🇲🇾","MV":"🇲🇻","BD":"🇧🇩",
+            "TW":"🇨🇳","CN":"🇨🇳","FJ":"🇫🇯","LK":"🇱🇰","GA":"🇬🇹","HK":"🇭🇰","KR":"🇰🇷","LA":"🇱🇦",
+            "MM":"🇲🇲","NP":"🇳🇵","PH":"🇵🇭","PG2":"🇵🇬","BN":"🇧🇳","LK2":"🇱🇰","SB":"🇸🇧",
+            "IN":"🇮🇳","LK3":"🇱🇰","VN":"🇻🇳","KZ":"🇰🇿","IL":"🇮🇱","AZ":"🇦🇿","EG":"🇪🇬",
+            "AE":"🇦🇪","BH":"🇧🇭","JO":"🇯🇴","AF2":"🇦🇫","KW":"🇰🇼","LB":"🇱🇧","SA":"🇸🇦",
+            "KZ2":"🇰🇿","TJ":"🇹🇯","TR":"🇹🇷","UZ":"🇺🇿","GA2":"🇬🇦","DZ":"🇩🇿","BF":"🇧🇫",
+            "CI":"🇨🇮","NG":"🇳🇬","SN":"🇸🇳","SC":"🇸🇨","TZ":"🇹🇿","TG":"🇹🇬","GQ":"🇬🇶",
+            "ZA2":"🇿🇦","KE":"🇰🇪","MZ":"🇲🇿","MG":"🇲🇬","MR":"🇲🇷","MA":"🇲🇦","RW":"🇷🇼",
+            "ZA3":"🇿🇦","AO":"🇦🇴","CV":"🇨🇻","UG":"🇺🇬","RE":"🇷🇪","FR":"🇫🇷","LV":"🇱🇻",
+            "NC":"🇳🇨","IT":"🇮🇹","RO2":"🇷🇴","MD":"🇲🇩","PF":"🇵🇫","ES":"🇪🇸","FR2":"🇫🇷",
+            "HR":"🇭🇷","CY":"🇨🇾","GE":"🇬🇪","LU":"🇱🇺","NO":"🇳🇴","GR":"🇬🇷","RU":"🇷🇺",
+            "PT":"🇵🇹","RO3":"🇷🇴","UA":"🇺🇦","FR3":"🇫🇷"}.get(r, "✈️")
+
+A = []  # all airlines
+def a(slug,code,kr,en,co,flagr,hub,hc,al,fw,dest,rt,ds,rg,img):
+    A.append(locals().copy())
+
+# ═══════════════ AMERICAS (31) ═══════════════
+a("air-north","4N","에어 노스","Air North","캐나다","CA","화이트호스","YXY","없음","Boeing 737-400, ATR 42","15","화이트호스 ↔ 밴쿠버, 에드먼턴, 캘거리, 옐로나이프","1977년 설립. 캐나다 유콘 준주 지역 항공사. 북극곰 라이브러리 특징.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Air_North_Boeing_737-400_Combi_C-GNWN_YOW_2022.jpg/1280px-Air_North_Boeing_737-400_Combi_C-GNWN_YOW_2022.jpg")
+a("air-panama","7P","에어 파나마","Air Panama","파나마","PA","파나마 시티","PAC","없음","Boeing 737-300, DHC-6","20","파나마 시티 ↔ 다비드, 보카스델토로, 쿠나얄라","파나마 국적 항공사. 카리브해 연안 섬과 내륙 연결.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Air_Panama_Boeing_737-3Y0_HP-1503_PAC.jpg/1280px-Air_Panama_Boeing_737-3Y0_HP-1503_PAC.jpg")
+a("amaszonas","Z8","아마조나스 항공","Amaszonas","볼리비아","BO","코차밤바","CBB","없음","Bombardier CRJ-200/900","15","코차밤바 ↔ 라파스, 산타크루스, 수크레","볼리비아 지역 항공사.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Amaszonas_Bombardier_CRJ-200ER_CP-2630_CBB_2017-04-25.jpg/1280px-Amaszonas_Bombardier_CRJ-200ER_CP-2630_CBB_2017-04-25.jpg")
+a("amaszonas-uruguay","Z7","아마조나스 우루과이","Amaszonas Uruguay","우루과이","UY","몬테비데오","MVD","없음","Bombardier CRJ-200/900","8","몬테비데오 ↔ 부에노스아이레스, 아순시온","아마조나스 우루과이 자회사.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Bombardier_CRJ-200ER_%28Amaszonas_L%C3%ADnea_A%C3%A9rea%29.jpg/1280px-Bombardier_CRJ-200ER_%28Amaszonas_L%C3%ADnea_A%C3%A9rea%29.jpg")
+a("avianca","AV","아비안카","Avianca","콜롬비아","CO","보고타","BOG","Star Alliance","Airbus A320/321, Boeing 787-8/9","80","보고타 ↔ 뉴욕, 마이애미, 마드리드, 리마, 산티아고","세계 2번째 오래된 항공사(1919). Star Alliance 멤버.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Avianca_Boeing_787-8_Dreamliner_N856AV.jpg/1280px-Avianca_Boeing_787-8_Dreamliner_N856AV.jpg")
+a("avianca-costa-rica","LR","아비안카 코스타리카","Avianca Costa Rica","코스타리카","CR","산호세","SJO","Star Alliance","Airbus A320/321neo, ATR 72","30","산호세 ↔ 뉴욕, 로스앤젤레스, 과테말라, 마나과","아비안카 홀딩스 산하.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Avianca_El_Salvador_ATR_72-600_%28EI-LPD%29.jpg/1280px-Avianca_El_Salvador_ATR_72-600_%28EI-LPD%29.jpg")
+a("avianca-ecuador","2K","아비안카 에콰도르","Avianca Ecuador","에콰도르","EC","키토","UIO","Star Alliance","Airbus A320/A319, ATR 72","15","키토 ↔ 보고타, 리마, 과야킬","아비안카 홀딩스 에콰도르.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Avianca_El_Salvador_ATR_72-600_%28EI-LPD%29.jpg/1280px-Avianca_El_Salvador_ATR_72-600_%28EI-LPD%29.jpg")
+a("avianca-peru","T0","아비안카 페루","Avianca Peru","페루","PE","리마","LIM","Star Alliance","Airbus A320/A319, ATR 72","15","리마 ↔ 보고타, 키토, 산티아고","아비안카 홀딩스 페루.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Avianca_El_Salvador_ATR_72-600_%28EI-LPD%29.jpg/1280px-Avianca_El_Salvador_ATR_72-600_%28EI-LPD%29.jpg")
+a("avior-airlines","9V","아비오르 항공","Avior Airlines","베네수엘라","VE","바르키시메토","BRM","없음","Boeing 737-200, Embraer E-190","12","바르키시메토 ↔ 카라카스, 마르가리타섬","베네수엘라 민간 항공사.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Avior_Airlines_Boeing_737-200_Adv._YV-1023.jpg/1280px-Avior_Airlines_Boeing_737-200_Adv._YV-1023.jpg")
+a("calm-air","MO","캄 에어","Calm Air","캐나다","CA","위니펙","YWG","없음","ATR 42, DHC-6, Saab 340","15","위니펙 ↔ 체르칠, 랭커스터","1962년 설립. 매니토바주 항공 인프라.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Calm_Air_ATR_42-300_C-FTNN.jpg/1280px-Calm_Air_ATR_42-300_C-FTNN.jpg")
+a("clic-air","VE","클릭 에어","Clic Air","콜롬비아","CO","메데인","EOH","없음","Beechcraft 1900, Let L-410, Cessna Caravan","25","메데인 ↔ 카르타헤나, 부카라만가, 아라우카","콜롬비아 내륙 오지 연결.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Clic_Air_Beechcraft_1900D_HK-4423_-_MDE.jpg/1280px-Clic_Air_Beechcraft_1900D_HK-4423_-_MDE.jpg")
+a("cm-airlines","H5","CM 항공","CM Airlines","온두라스","HN","테구시갈파","TGU","없음","BAe Jetstream 31, Cessna Caravan","10","테구시갈파 ↔ 라세이바, 로아탄","온두라스 국적 항공사.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/CM_Airlines_%28cropped%29.png/1280px-CM_Airlines_%28cropped%29.png")
+a("ecojet","8J","에코제트","Ecojet","캐나다","CA","캘거리","YYC","없음","De Havilland Dash 8-400","8","캘거리 ↔ 밴쿠버, 에드먼턴, 빅토리아","2024년 캐나다 신규 지역 항공사. 저탄소 친환경.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/De_Havilland_Canada_DHC-8-402_%28Dash_8-400%29_Scorpion_Aviation_February_2024.jpg/1280px-De_Havilland_Canada_DHC-8-402_%28Dash_8-400%29_Scorpion_Aviation_February_2024.jpg")
+a("gol-linhas-aereas","G3","골 항공","Gol Linhas Aereas","브라질","BR","상파울루","GRU","없음","Boeing 737-700/800/MAX","100","상파울루 ↔ 리우, 브라질리아, 살바도르, 부에노스아이레스","브라질 최대 LCC. 시장 점유율 1위.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/GOL_Boeing_737-800_%28PR-GXL%29.jpg/1280px-GOL_Boeing_737-800_%28PR-GXL%29.jpg")
+a("hawaiian-airlines","HA","하와이안 항공","Hawaiian Airlines","미국","US","호놀룰루","HNL","없음","Airbus A330, Boeing 787-9, Boeing 717","30","호놀룰루 ↔ 라스베이거스, 샌프란시스코, 도쿄, 서울, 시드니","미국 최고령 항공사 중 하나(1929). 태평양 횡단. '알로하 정신'.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Hawaiian_Airlines_Boeing_787-9_N784HA_HNL_2024-04-18.png/1280px-Hawaiian_Airlines_Boeing_787-9_N784HA_HNL_2024-04-18.png")
+a("intercaribbean-airways","JY","인터카리비안 항공","InterCaribbean Airways","터크스케이커스","TC","프로비덴시알레스","PLS","없음","Embraer E-120/145, ATR 42","15","프로비덴시알레스 ↔ 킹스턴, 산토도밍고, 나소, 하바나","터크스케이커스 항공사. 카리브해 20+ 목적지.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/InterCaribbean_Airways_Embraer_ERJ-145_VQ-BSS.jpg/1280px-InterCaribbean_Airways_Embraer_ERJ-145_VQ-BSS.jpg")
+a("lanhsa","","란사","LANHSA","온두라스","HN","라세이바","LCE","없음","Cessna 208, Let L-410","8","라세이바 ↔ 테구시갈파, 로아탄","1970년 설립. 온두라스 카리브 연안 항공사.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Let_L-410_UVP-E_Turbolet_C-FTCA_-_Air_Creebec.jpg/1280px-Let_L-410_UVP-E_Turbolet_C-FTCA_-_Air_Creebec.jpg")
+a("latam-airlines","LA","LATAM 항공","LATAM Airlines","칠레","CL","산티아고","SCL","없음","Boeing 787-8/9, 777-300ER, A320/321neo","100","산티아고 ↔ 마드리드, 런던, 시드니, 마이애미, 뉴욕, 상파울루","라틴아메리카 최대 항공사 그룹. Delta 전략 파트너.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg/1280px-LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg")
+a("latam-airlines-brazil","JJ","LATAM 브라질","LATAM Airlines Brazil","브라질","BR","상파울루","GRU","없음","Boeing 767-300ER, 777-300ER, A320neo","60","상파울루 ↔ 마이애미, 뉴욕, 파리, 런던, 리스본","LATAM 그룹 브라질 법인.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg/1280px-LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg")
+a("latam-airlines-colombia","4C","LATAM 콜롬비아","LATAM Airlines Colombia","콜롬비아","CO","보고타","BOG","없음","Airbus A320/319/320neo","20","보고타 ↔ 마이애미, 뉴욕, 키토, 리마, 산티아고","LATAM 그룹 콜롬비아 법인.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg/1280px-LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg")
+a("latam-airlines-ecuador","XL","LATAM 에콰도르","LATAM Airlines Ecuador","에콰도르","EC","키토","UIO","없음","Airbus A320","8","키토 ↔ 과야킬, 리마, 보고타, 산티아고","LATAM 그룹 에콰도르 법인.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg/1280px-LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg")
+a("latam-airlines-paraguay","PZ","LATAM 파라과이","LATAM Airlines Paraguay","파나과이","PG","아순시온","ASU","없음","Airbus A320/A319, Boeing 767-300ER","10","아순시온 ↔ 부에노스아이레스, 산티아고, 상파울루","LATAM 그룹 파라과이 법인.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg/1280px-LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg")
+a("latam-airlines-peru","LP","LATAM 페루","LATAM Airlines Peru","페루","PE","리마","LIM","없음","Airbus A320/319/320neo, Boeing 767-300ER","25","리마 ↔ 보고타, 산티아고, 부에노스아이레스, 마이애미","LATAM 그룹 페루 법인.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg/1280px-LATAM_Chile_Boeing_787-9_Dreamliner_CC-BGK.jpg")
+a("pal-airlines","PB","PAL 항공","PAL Airlines","캐나다","CA","세인트존스","YYT","없음","De Havilland Dash 8-100/300, Boeing 737","30","세인트존스 ↔ 핼리팩스, 몬트리올, 토론토","캐나다 대서양 연안 지역 항공사.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/PAL_Airlines_de_Havilland_Canada_DHC-8-102_C-GPPA_St._John%27s.jpg/1280px-PAL_Airlines_de_Havilland_Canada_DHC-8-102_C-GPPA_St._John%27s.jpg")
+a("porter-airlines","P3","포터 항공","Porter Airlines","캐나다","CA","토론토(빌리 비숍)","YTZ","없음","De Havilland Dash 8-400, Embraer E195-E2","40","토론토 ↔ 몬트리올, 오타와, 핼리팩스, 뉴욕, 시카고","캐나다 프리미엄 리저널. 비행 중 무료 와인 서비스.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Porter_Airlines_Embraer_E195-E2_C-GEAK.jpg/1280px-Porter_Airlines_Embraer_E195-E2_C-GEAK.jpg")
+a("porter-airlines-canada","PD","포터 항공 캐나다","Porter Airlines Canada","캐나다","CA","토론토(빌리 비숍)","YTZ","없음","De Havilland Dash 8-400, Embraer E195-E2","40","토론토 ↔ 몬트리올, 오타와, 뉴욕, 워싱턴","포터 항공 캐나다 국내 운항 법인.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Porter_Airlines_Embraer_E195-E2_C-GEAK.jpg/1280px-Porter_Airlines_Embraer_E195-E2_C-GEAK.jpg")
+a("sky-airline","H2","스카이 항공","Sky Airline","칠레","CL","산티아고","SCL","없음","Airbus A320/321neo","20","산티아고 ↔ 리마, 보고타, 부에노스아이레스, 키토","칠레 LCC. 남미 서부 해안 주요 도시 연결.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sky_Airline_Airbus_A321-200N_CC-BHB-2.jpg/1280px-Sky_Airline_Airbus_A321-200N_CC-BHB-2.jpg")
+a("sky-airlines-peru","H8","스카이 항공 페루","Sky Airline Peru","페루","PE","리마","LIM","없음","Airbus A320neo, A319","10","리마 ↔ 산티아고, 쿠스코, 아레키파","스카이 항공 페루 법인.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sky_Airline_Airbus_A321-200N_CC-BHB-2.jpg/1280px-Sky_Airline_Airbus_A321-200N_CC-BHB-2.jpg")
+a("surinam-airways","PY","수리남 항공","Surinam Airways","수리남","SR","파라마리보","PBM","없음","Boeing 737-700/800, Airbus A340-300","10","파라마리보 ↔ 암스테르담, 마이애미, 아루바, 트리니다드","수리남 국적 항공사. 남미 북부에서 유럽·북미 연결.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Surinam_Airways_Boeing_737-8AS_PZ-TCP.jpg/1280px-Surinam_Airways_Boeing_737-8AS_PZ-TCP.jpg")
+a("taca","TA","타카 항공","TACA","엘살바도르","SV","산살바도르","SAL","Star Alliance","Airbus A320/321, ATR 72","40","산살바도르 ↔ 과테말라, 마나과, 산호세, 테구시갈파","1931년 설립. 중미 전통 항공사. 아비안카 그룹 통합.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/TACA_A320-200_%283749889531%29.jpg/1280px-TACA_A320-200_%283749889531%29.jpg")
+a("tag-airlines","5U","TAG 항공","TAG Airlines","과테말라","GT","과테말라 시티","GUA","없음","Cessna 208 Caravan, Beechcraft 1900","10","과테말라 시티 ↔ 플로레스(티칼), 케찰테낭고, 산호세","과테말라 지역 항공사. 마야 문명 유적 티칼(플로레스) 연결.","americas","https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cessna_208B_Grand_Caravan_TAG_Airlines_TG-TAG1.jpg/1280px-Cessna_208B_Grand_Caravan_TAG_Airlines_TG-TAG1.jpg")
+
+# ═══════════════ ASIA & OCEANIA (34) ═════════

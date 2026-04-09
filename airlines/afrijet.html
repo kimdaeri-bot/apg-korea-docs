@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afrijet J7 — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Afrijet_Aviation_%28Cropper%29.jpg/1280px-Afrijet_Aviation_%28Cropper%29.jpg" alt="Afrijet">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Afrijet
+
+🇬🇦 가봉의 국적항공사, <strong>Afrijet</strong>을(를) 소개합니다!
+
+2004년 설립된 Afrijet은(는) <strong>리브르빌 국제공항 (LBV)</strong>을(를) 허브로 중앙아프리카 및 서아프리카을(를) 연결하는 항공사입니다.
+
+가봉을 거점으로 중앙아프리카 지역을 연결하는 항공사입니다. 열대우림과 해안가의 소도시들을 잇는 중앙아프리카 항공 네트워크의 핵심입니다.
+
+🛫 허브 공항: 리브르빌 국제공항 (LBV)
+🤝 동맹: 
+🛩️ 운용 기재: CRJ-100, CRJ-200, CRJ-900, ATR 42, ATR 72
+🗺️ 취항지: 리브르빌 ↔ 두알라, 브라자빌, 킨샤사, 야운데, 바타, 포트앤토 등
+
+📍 주요 노선: 중앙아프리카 및 서아프리카
+
+✨ 중앙아프리카 경제 공동체(CEMAC) 지역의 대표 항공사로, CRJ와 ATR 기종으로 열대 지역 소규모 공항 취항에 특화되어 있습니다.
+
+📍Afrijet는(은) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Afrijet (J7) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#Afrijet #아프리제트 #가봉 #중앙아프리카 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

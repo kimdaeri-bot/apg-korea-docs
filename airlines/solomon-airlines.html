@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solomon Airlines IE — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Solomon_Airlines_Airbus_A320-232_H4-SLI_%28cropped%29.jpg/1280px-Solomon_Airlines_Airbus_A320-232_H4-SLI_%28cropped%29.jpg" alt="Solomon Airlines">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Solomon Airlines
+
+🇸🇧 솔로몬제도의 국적항공사, <strong>Solomon Airlines(솔로몬제도항공)</strong>을 소개합니다!
+
+1962년 설립된 Solomon Airlines은(는) 솔로몬제도의 대표 항공사로서, <strong>호니아라 헨더슨 국제공항 (HIR)</strong>을(를) 허브로 운영하는 풀서비스 항공사입니다. 비가맹 취항지 수는 15개 이상으로 글로벌 네트워크를 구축하고 있습니다.
+
+솔로몬제도의 국적항공사로, 남태평양의 아름다운 산호초 섬들을 연결합니다. 내륙 섬 간 운항과 호주, 바누아투, 피지 등 남태평양 국제선을 운항하며, 관광과 지역 교통의 핵심 역할을 합니다.
+
+🛫 허브 공항: 호니아라 헨더슨 국제공항 (HIR)
+🤝 동맹: 비가맹
+🛩️ 운용 기재: A320, Dash 8-100, Twin Otter
+🗺️ 취항지: 15+ 도시
+
+📍 주요 노선: 호니아라 ↔ 아우키, 누카아로, 만고, 시가, 브리스베인, 포트빌라, 나디 등
+
+✨ Solomon Airlines은(는) 꾸준히 네트워크를 확장하며 솔로몬제도 항공 시장에서 중요한 역할을 담당하고 있습니다.
+
+📍Solomon Airlines는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Solomon Airlines (IE) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#SolomonAirlines #솔로몬제도 #남태평양 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

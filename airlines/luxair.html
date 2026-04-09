@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxair LG — APG Korea</title>
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/LX-LGP_-_Boeing_737-800_-_Luxair.jpg/1280px-LX-LGP_-_Boeing_737-800_-_Luxair.jpg" alt="Luxair B737-800">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Luxair
+
+🇱🇺 룩셈부르크의 항공사, <strong>Luxair(룩스에어)</strong>을(를) 소개합니다!
+
+1962년 설립된 Luxair은(는) <strong>룩셈부르크 공항 (LUX)</strong>을 허브로 운항하는 항공사로, 룩셈부르크 국적항공사로, 1962년 설립된 유럽의 전통 있는 항공사입니다.
+
+🛫 허브 공항: 룩셈부르크 공항 (LUX)
+🤝 동맹: 독립
+🛩️ 운용 기재: B737-700, B737-800, DHC-8-400
+🗺️ 취항지: 30+ 도시
+
+📍 주요 노선: 룩셈부르크 ↔ 런던, 파리, 프랑크푸르트, 뮌헨, 밀라노 등
+
+✨ 비즈니스 수요가 높은 룩셈부르크-런던/프랑크푸르트 노선에 특화되어 있으며, 룩셈부르크의 높은 경제력에 맞는 비즈니스 서비스를 제공합니다.
+
+📍Luxair은(는) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Luxair (LG) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#Luxair #룩스에어 #룩셈부르크 #유럽항공 #비즈니스여행 #APGKorea #GP275</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById("copyText");
+  const text=el.innerText.replace("📋 복사","").trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector(".copy-btn");
+    btn.textContent="✅ 복사됨!";
+    btn.classList.add("copied");
+    setTimeout(()=>{btn.textContent="📋 복사";btn.classList.remove("copied");},2000);
+  });
+}
+</script>
+</body>
+</html>

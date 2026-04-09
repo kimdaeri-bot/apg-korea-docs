@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenya Airways KQ — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Kenya_Airways_Boeing_787-8_Dreamliner_%28cropped%29.jpg/1280px-Kenya_Airways_Boeing_787-8_Dreamliner_%28cropped%29.jpg" alt="Kenya Airways">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Kenya Airways
+
+🇰🇪 케냐의 국적항공사, <strong>Kenya Airways</strong>을(를) 소개합니다!
+
+1977년 설립된 Kenya Airways은(는) <strong>나이로비 조모 케냐타 국제공항 (NBO)</strong>을(를) 허브로 아프리카, 유럽, 아시아 40+ 도시을(를) 연결하는 항공사입니다.  <strong>SkyTeam</strong> 소속으로 글로벌 네트워크의 혜택을 제공합니다.
+
+케냐 국적항공사이자 동아프리카 대표 항공사입니다. '아프리카 날개(Pride of Africa)'라는 슬로건 아래 아프리카 항공 산업을 선도해 왔습니다. SkyTeam 소속으로 글로벌 네트워크에 편입되어 있습니다.
+
+🛫 허브 공항: 나이로비 조모 케냐타 국제공항 (NBO)
+🤝 동맹: SkyTeam
+🛩️ 운용 기재: B737-700, B737-800, B787-8, E190
+🗺️ 취항지: 나이로비 ↔ 런던, 파리, 암스테르담, 두바이, 몸바사, 케이프타운, 요하네스버그, 방콕, 광저우 등
+
+📍 주요 노선: 아프리카, 유럽, 아시아 40+ 도시
+
+✨ SkyTeam 소속 아프리카 대표 항공사로, B787 드림라이너로 장거리 노선 컴포트를 높였습니다. 마사이마라 사파리와 몸바사 해변을 잇는 관광 항공의 핵심입니다.
+
+📍Kenya Airways는(은) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Kenya Airways (KQ) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#KenyaAirways #케냐항공 #나이로비 #SkyTeam #마사이마라 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

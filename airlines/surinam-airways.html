@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surinam Airways PY — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Surinam_Airways_Boeing_737-300.jpg/1280px-Surinam_Airways_Boeing_737-300.jpg" alt="Surinam Airways PY">
+</div>
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Surinam Airways PY
+
+🇸🇷 수리남의 국적항공사, <strong>Surinam Airways(수리남항공)</strong>를 소개합니다!
+
+1953년 설립된 Surinam Airways는 수리남의 국적 항공사로, <strong>요한 아돌프 펭엘 국제공항(PBM)</strong>을 허브로 카리브해와 남미, 유럽을 연결합니다. 수리남의 독특한 문화를 담은 기내 서비스로 여행객들에게 색다른 경험을 선사합니다.
+
+🛫 허브 공항: 요한 아돌프 펭엘 국제공항 (PBM)
+🤝 동맹: 독자 운영
+🛩️ 운용 기재: Boeing 737-700, Boeing 737-800
+🗺️ 취항지: 10+ 도시
+
+📍 주요 노선: 파라마리보 ↔ 암스테르담, 마이애미, 조지타운, 포르토프랭스, 브라질리아, 카라카스 등
+
+✨ 남미 카리브해의 숨겨진 보석 수리남의 관문 항공사입니다. 암스테르담 직항으로 유럽과 수리남을 연결하며, 수리남 특유의 다문화 요리를 기내에서 맛볼 수 있습니다. 카리브해의 아마존 만남 지점에서의 비행은 잊지 못할 경험입니다.
+
+📍Surinam Airways는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Surinam Airways (PY) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#SurinamAirways #수리남항공 #수리남 #파라마리보 #카리브해 #남미 #다문화 #APGKorea #GP275 #항공사소개</div>
+</div>
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

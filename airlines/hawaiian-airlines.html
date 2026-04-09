@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hawaiian Airlines HA — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Hawaiian_Airlines_Airbus_A330-200_%28N384HA%29.jpg/1280px-Hawaiian_Airlines_Airbus_A330-200_%28N384HA%29.jpg" alt="Hawaiian Airlines HA">
+</div>
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Hawaiian Airlines HA
+
+🇺🇸 미국 하와이의 국적항공사, <strong>Hawaiian Airlines(하와이안항공)</strong>를 소개합니다!
+
+1929년 설립된 Hawaiian Airlines는 미국에서 오래된 항공사 중 하나로, <strong>다니엘 K. 이노우에 국제공항(HNL)</strong>을 허브로 하와이와 태평양 지역, 미주 본토를 연결합니다. 하와이의 따뜻한 알로하 정신을 담은 서비스로 전 세계 여행객들에게 사랑받습니다.
+
+🛫 허브 공항: 호놀룰루 국제공항 (HNL)
+🤝 동맹: 독자 운영
+🛩️ 운용 기재: Airbus A330-200, A321neo, Boeing 787-9, Boeing 717-200
+🗺️ 취항지: 30+ 도시
+
+📍 주요 노선: 호놀룰루 ↔ 뉴욕, 로스앤젤레스, 샌프란시스코, 시애틀, 도쿄, 오사카, 시드니, 오클랜드 등
+
+✨ 태평양의 하늘을 가장 아름답게 수놓는 항공사입니다. 하와이 전통 프레젠테이션과 무료 기내식(주항공편), Piilani 마일리지 프로그램이 특징이며, 비행기 안에서도 하와이의 따뜻한 향기를 느낄 수 있습니다.
+
+📍Hawaiian Airlines는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Hawaiian Airlines (HA) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#HawaiianAirlines #하와이안항공 #하와이여행 #호놀룰루 #알로하 #태평양 #APGKorea #GP275 #항공사소개</div>
+</div>
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

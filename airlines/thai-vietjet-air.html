@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thai VietJet Air VZ — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Thai_VietJet_Air_Airbus_A320-232_HS-VVT.jpg/1280px-Thai_VietJet_Air_Airbus_A320-232_HS-VVT.jpg" alt="Thai VietJet Air">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Thai VietJet Air
+
+🇹🇭 태국의 국적항공사, <strong>Thai VietJet Air(타이비엣제트항공)</strong>을 소개합니다!
+
+2014년 설립된 Thai VietJet Air은(는) 태국의 대표 항공사로서, <strong>수완나품 국제공항 (BKK)</strong>을(를) 허브로 운영하는 풀서비스 항공사입니다. 비가맹 취항지 수는 30개 이상으로 글로벌 네트워크를 구축하고 있습니다.
+
+베트남 비엣제트에어와 태국 자본의 합작 항공사로, 수완나품 공항을 기반으로 태국 국내선과 베트남·중국 노선을 저가에 운항합니다. 태국 LCC 시장에서 빠르게 성장하며 젊은 여행객 층을 타겟으로 하고 있습니다.
+
+🛫 허브 공항: 수완나품 국제공항 (BKK)
+🤝 동맹: 비가맹
+🛩️ 운용 기재: A320, A321
+🗺️ 취항지: 30+ 도시
+
+📍 주요 노선: 방콕 ↔ 푸껫, 치앙마이, 우돈타니, 호치민, 하노이, 다낭, 난징, 청두 등
+
+✨ Thai VietJet Air은(는) 꾸준히 네트워크를 확장하며 태국 항공 시장에서 중요한 역할을 담당하고 있습니다.
+
+📍Thai VietJet Air는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Thai VietJet Air (VZ) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#ThaiVietJetAir #타이비엣제트 #태국여행 #LCC #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

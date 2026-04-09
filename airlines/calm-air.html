@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calm Air MO — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Calm_Air_ATR_42-500_C-GCNV.jpg" alt="Calm Air">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Calm Air
+
+🇨🇦 캐나다 매니토바주의 북부 전문 항공사, <strong>Calm Air(캄에어)</strong>를 소개합니다!
+
+1962년 설립된 Calm Air는 캐나다 북부 지역 커뮤니티를 연결하는 대표적인 지역항공사로서, <strong>윈니펙 국제공항(YWG)</strong>과 <strong>톰슨 공항(YTH)</strong>을 허브로 매니토바, 온타리오, 누나부트 준주의 원주민 커뮤니티와 광산 지역을 연결합니다.
+
+극북 지역 운항 전문성을 갖춘 Calm Air는 허드슨베이 연안의 처칠(북극곰 관광지), 란킨 인렛 등 접근이 어려운 북극권 커뮤니티에 필수 항공 서비스를 제공합니다. <strong>극한 기후 운항 노하우</strong>와 원주민 사회에 대한 이해를 바탕으로 의료, 물자 수송, 관광 운송을 담당하고 있습니다.
+
+🛫 허브 공항: 윈니펙 국제공항 (YWG), 톰슨 공항 (YTH)
+🛩️ 운용 기재: ATR 42-500, Saab 340
+🗺️ 취항지: 30+ 도시 (캐나다 북부)
+
+📍 주요 노선: 윈니펙/톰슨 ↔ 처칠, 란킨 인렛, 아르빗, 베이커레이크, 길럼, 산포드레이크, 퓨키투크 등
+
+✨ 캐나다 북극권의 생명선 역할을 하는 Calm Air는 겨울철 영하 40도 이하의 극한 환경에서도 안전한 운항을 자랑합니다. 처칠로 가는 북극곰 관광 노선은 전 세계 야생동물 애호가들에게 인기가 높으며, ATR과 Saab 기종으로 작은 활주로에도 안전하게 착륙합니다. 원주민 커뮤니티의 필수 생활물자와 의료 서비스 접근성을 책임지는 항공사입니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Calm Air (MO) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#CalmAir #캄에어 #캐나다북부 #처칠 #북극곰여행 #누나부트 #APGKorea #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

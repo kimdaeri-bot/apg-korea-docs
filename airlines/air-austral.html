@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air Austral UU — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Boeing_787-8_Dreamliner_Air_Austral_%28AUB%29_F-OLRC_-_MSN_36279_-_Will_be_delivered_to_Air_Austral_%2810279699015%29.jpg" alt="Air Austral">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Air Austral
+
+🇷🇪 프랑스령 레위니옹의 항공사, <strong>Air Austral(에어 오스트랄)</strong>을 소개합니다!
+
+1975년 설립된 Air Austral은 인도양의 프랑스령 레위니옹 섬을 기반으로 하는 항공사로, <strong>롤랑 가로스 공항(RUN)</strong>을 허브로 프랑스 본토, 마다가스카르, 모리셔스, 코모로, 세이셸, 남아프리카공화국, 태국, 인도를 연결하는 장거리 항공사입니다.
+
+인도양 지역의 핵심 항공사로서 레위니옹과 프랑스 본토(파리)를 연결하는 초장거리 노선을 운영하며, 화산섬 레위니옹의 아름다운 자연을 모티브로 한 라이브러리가 특징입니다. <strong>크레올 문화</strong>와 프랑스 서비스의 조화를 추구합니다.
+
+🛫 허브 공항: 롤랑 가로스 공항 (RUN, 레위니옹)
+🤝 동맹: 없음
+🛩️ 운용 기재: Boeing 787-8, Boeing 777-300ER, ATR 72-500
+🗺️ 취항지: 20+ 도시
+
+📍 주요 노선: 레위니옹 ↔ 파리, 마르세유, 방콕, 첸나이, 요하네스버그, 마다가스카르, 모리셔스, 마요트, 세이셸 등
+
+✨ 레위니옹과 프랑스 본토를 잇는 11시간 이상의 초장거리 노선에서 Boeing 787 Dreamliner를 투입하여 승객 편의를 극대화했습니다. 인도양 섬나라들을 연결하는 리저널 네트워크와 아시아-아프리카 노선까지 운영하며, 레위니옹 관광과 비즈니스를 지원하는 핵심 항공사입니다.
+
+📍Air Austral은 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Air Austral (UU) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#AirAustral #에어오스트랄 #레위니옹 #인도양 #프랑스령 #보잉787 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

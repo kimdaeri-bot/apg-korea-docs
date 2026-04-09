@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LATAM Airlines Paraguay PZ — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/LATAM_Paraguay_Airbus_A320-214_%28PS-LAA%29.jpg/1280px-LATAM_Paraguay_Airbus_A320-214_%28PS-LAA%29.jpg" alt="LATAM Airlines Paraguay PZ">
+</div>
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ LATAM Airlines Paraguay PZ
+
+🇵🇾 파라과이의 항공사, <strong>LATAM Airlines Paraguay(라탐항공 파라과이)</strong>를 소개합니다!
+
+LATAM Airlines Paraguay는 LATAM Group의 파라과이 법인으로, 전신 <strong>TAM Mercosur</strong>의 코드를 계승합니다. <strong>실베스티 페뇰라 국제공항(ASU)</strong>을 허브로 파라과이와 남미 지역을 연결합니다.
+
+🛫 허브 공항: 실베스티 페뇰라 국제공항 (ASU)
+🤝 동맹: 독자 운영 (LATAM Group)
+🛩️ 운용 기재: A320, A319
+🗺️ 취항지: 10+ 도시
+
+📍 주요 노선: 아순시온 ↔ 산티아고, 부에노스아이레스, 상파울루, 리마, 보고타, 몬테비데오 등
+
+✨ 파라과이의 수도 아순시온에서 남미 주요 도시들을 직항으로 연결하는 항공사입니다. 파라과이의 저렴한 물가와 남미 여행의 조합을 원하는 여행객들에게 완벽한 선택입니다.
+
+📍LATAM Airlines Paraguay는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 LATAM Airlines Paraguay (PZ) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#LATAMParaguay #라탐파라과이 #파라과이여행 #아순시온 #남미 #APGKorea #GP275 #항공사소개</div>
+</div>
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

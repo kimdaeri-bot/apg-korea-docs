@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batik Air ID — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Batik_Air_Airbus_A320-200_Batik_Livery_PK-ILJ.jpg/1280px-Batik_Air_Airbus_A320-200_Batik_Livery_PK-ILJ.jpg" alt="Batik Air">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Batik Air
+
+🇮🇩 인도네시아의 국적항공사, <strong>Batik Air(바틱에어 (인도네시아))</strong>을 소개합니다!
+
+2013년 설립된 Batik Air은(는) 인도네시아의 대표 항공사로서, <strong>자카르타 순다쿨 국제공항 (CGK)</strong>을(를) 허브로 운영하는 풀서비스 항공사입니다. 비가맹 취항지 수는 50개 이상으로 글로벌 네트워크를 구축하고 있습니다.
+
+라이온에어 그룹의 풀서비스 브랜드로 출범하여, 인도네시아 내륙은 물론 동남아 국제선까지 운항하는 중급 항공사입니다. 인도네시아 전통 '바틱' 문양을 브랜딩에 적용해 문화적 정체성을 갖추고 있습니다.
+
+🛫 허브 공항: 자카르타 순다쿨 국제공항 (CGK)
+🤝 동맹: 비가맹
+🛩️ 운용 기재: A320, A320neo, A330-300, B737-800, B737 MAX 8
+🗺️ 취항지: 50+ 도시
+
+📍 주요 노선: 자카르타 ↔ 발리, 메단, 쿠알라룸푸르, 싱가포르, 호치민, 페르스 등
+
+✨ Batik Air은(는) 꾸준히 네트워크를 확장하며 인도네시아 항공 시장에서 중요한 역할을 담당하고 있습니다.
+
+📍Batik Air는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Batik Air (ID) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#BatikAir #바틱에어 #인도네시아여행 #발리 #자카르타 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

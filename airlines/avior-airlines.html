@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avior Airlines 9V — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Avior_Airlines_Boeing_737-400_YV524T.jpg" alt="Avior Airlines">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Avior Airlines
+
+🇻🇪 베네수엘라의 민간항공사, <strong>Avior Airlines(아비오르항공)</strong>를 소개합니다!
+
+1994년 설립된 Avior Airlines는 베네수엘라 최대 민간항공사로서, <strong>바르셀로나 국제공항(BLA)</strong>을 주요 허브로 베네수엘라 국내선과 카리브해, 중남미 지역을 연결하는 항공사입니다. 2000년대 초반 베네수엘라 국영항공사 VIASA 폐업 이후 민간항공 시장의 공백을 메우며 성장했습니다.
+
+베네수엘라 동부 안소아테기주의 바르셀로나를 기반으로 하며, 수도 카라카스, 마라카이보, 마르가리타섬 등 주요 관광지와 산업도시를 연결합니다. 오일산업과 관광산업을 지원하는 <strong>비즈니스 및 레저 노선</strong>에 집중하고 있습니다.
+
+🛫 허브 공항: 바르셀로나 국제공항 (BLA), 마이케티아 국제공항 (CCS)
+🛩️ 운용 기재: Boeing 737-400, Boeing 737-200
+🗺️ 취항지: 20+ 도시 (베네수엘라, 카리브해, 중남미)
+
+📍 주요 노선: 바르셀로나/카라카스 ↔ 마라카이보, 마르가리타섬, 발렌시아, 산토도밍고, 파나마시티, 아루바, 쿠라사오, 보고타 등
+
+✨ 베네수엘라 경제 상황 속에서도 꾸준히 국내외 노선을 유지하며 베네수엘라 국민들의 필수 이동수단으로 자리잡고 있습니다. 737 클래식 기종으로 카리브해 섬나라들과의 연결성을 제공하며, 중남미 주요 도시로의 국제선도 운영합니다. 마르가리타섬 등 베네수엘라 휴양지 접근성을 높이는 데 기여하고 있습니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Avior Airlines (9V) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#AviorAirlines #아비오르항공 #베네수엘라 #카라카스 #마르가리타섬 #카리브해 #APGKorea #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

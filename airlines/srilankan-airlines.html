@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SriLankan Airlines UL — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/SriLankan_Airlines_Airbus_A330-300_4R-ALE.jpg/1280px-SriLankan_Airlines_Airbus_A330-300_4R-ALE.jpg" alt="SriLankan Airlines">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ SriLankan Airlines
+
+🇱🇰 스리랑카의 국적항공사, <strong>SriLankan Airlines(스리랑카항공)</strong>을 소개합니다!
+
+1979년 설립된 SriLankan Airlines은(는) 스리랑카의 대표 항공사로서, <strong>반다라나이케 국제공항 (CMB)</strong>을(를) 허브로 운영하는 풀서비스 항공사입니다. Oneworld 취항지 수는 50개 이상으로 글로벌 네트워크를 구축하고 있습니다.
+
+스리랑카의 국적항공사이자 Oneworld 소속으로, 인도양의 전략적 허브인 콜롬보를 중심으로 아시아·유럽·호주를 연결합니다. 전통적인 스리랑카식 환대 정신을 서비스에 담아내며, 인도양 지역의 중요한 항공 허브 역할을 수행합니다.
+
+🛫 허브 공항: 반다라나이케 국제공항 (CMB)
+🤝 동맹: Oneworld
+🛩️ 운용 기재: A330-300, A320, A320neo, A321neo
+🗺️ 취항지: 50+ 도시
+
+📍 주요 노선: 콜롬보 ↔ 런던, 파리, 도쿄, 상하이, 방콕, 싱가포르, 말레, 도하, 멜버른 등
+
+✨ SriLankan Airlines은(는) 꾸준히 네트워크를 확장하며 스리랑카 항공 시장에서 중요한 역할을 담당하고 있습니다.
+
+📍SriLankan Airlines는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 SriLankan Airlines (UL) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#SriLankanAirlines #스리랑카항공 #스리랑카여행 #콜롬보 #Oneworld #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Groupe Transair R2 — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Transair_Senegal_%28cropped%29.jpg/1280px-Transair_Senegal_%28cropped%29.jpg" alt="Groupe Transair">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Groupe Transair
+
+🇸🇳 세네갈의 국적항공사, <strong>Groupe Transair</strong>을(를) 소개합니다!
+
+2007년 설립된 Groupe Transair은(는) <strong>다카르 요프 디옵 공항 (DSS)</strong>을(를) 허브로 서아프리카 10+ 도시을(를) 연결하는 항공사입니다.
+
+세네갈의 민간 항공사로, 서아프리카 지역 저가 항공 시장에서 역할을 합니다. B737 클래식 기체로 서아프리카 도시 간 저렴한 연결을 제공합니다.
+
+🛫 허브 공항: 다카르 요프 디옵 공항 (DSS)
+🤝 동맹: 
+🛩️ 운용 기재: B737-300, B737-500
+🗺️ 취항지: 다카르 ↔ 바마코, 아비장, 코나크리, 누아크쇼트, 카사블랑카 등
+
+📍 주요 노선: 서아프리카 10+ 도시
+
+✨ 서아프리카 저가 항공 시장의 선두주자로, 지역 주민들의 이동 비용을 낮추는 역할을 합니다.
+
+📍Groupe Transair는(은) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Groupe Transair (R2) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#GroupeTransair #트랑스에어 #세네갈 #서아프리카 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

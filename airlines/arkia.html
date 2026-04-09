@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arkia Israeli Airlines IZ — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Arkia_Airbus_A321-200_4X-AVB_-_Tel_Aviv_%28cropped%29.jpg/1280px-Arkia_Airbus_A321-200_4X-AVB_-_Tel_Aviv_%28cropped%29.jpg" alt="Arkia Israeli Airlines">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Arkia Israeli Airlines
+
+🇮🇱 이스라엘의 국적항공사, <strong>Arkia Israeli Airlines</strong>을(를) 소개합니다!
+
+1950년 설립된 Arkia Israeli Airlines은(는) <strong>벤구리온 국제공항 (TLV)</strong>을(를) 허브로 이스라엘 국내 및 유럽·중동 지역을(를) 연결하는 항공사입니다.
+
+이스라엘 최초의 항공사로, 태생은 이스라엘 공군의 전신 조직에서 시작되었습니다. 반세기 이상 이스라엘의 하늘을 지켜온 항공사로, 엘알(EL AL)과 함께 이스라엘 항공 시장의 양대 산맥입니다.
+
+🛫 허브 공항: 벤구리온 국제공항 (TLV)
+🤝 동맹: 
+🛩️ 운용 기재: A320-200, A321-200, A321neo, B757-300, E195
+🗺️ 취항지: 텔아비브 ↔ 파리, 런던, 로마, 아테네, 라르나카, 프라하, 베를린 등
+
+📍 주요 노선: 이스라엘 국내 및 유럽·중동 지역
+
+✨ 엘알에 이은 이스라엘 2위 항공사로, 최신 A321neo 도입으로 유럽 레저 노선을 확대하고 있습니다. 사해·갈릴리 등 이스라엘 관광 노선도 운영합니다.
+
+📍Arkia Israeli Airlines는(은) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Arkia Israeli Airlines (IZ) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#Arkia #아르키아항공 #이스라엘여행 #텔아비브 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

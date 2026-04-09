@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TACV Cabo Verde Airlines VR — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/TACV_Cabo_Verde_Airlines_%28cropped%29.jpg/1280px-TACV_Cabo_Verde_Airlines_%28cropped%29.jpg" alt="TACV Cabo Verde Airlines">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ TACV Cabo Verde Airlines
+
+🇨🇻 카보베르데의 국적항공사, <strong>TACV Cabo Verde Airlines</strong>을(를) 소개합니다!
+
+1958년 설립된 TACV Cabo Verde Airlines은(는) <strong>사우 항공port (SID) / 프라이아 공항 (RAI)</strong>을(를) 허브로 카보베르데 국내 9개 섬 및 유럽 15+ 도시을(를) 연결하는 항공사입니다.
+
+대서양 한가운데 카보베르데 공화국 국적항공사로, 10개의 화산섬으로 이루어진 군도를 연결합니다. 'HCV'로 불리며 대서양 횡단 항로의 중간 기착지 역할을 합니다.
+
+🛫 허브 공항: 사우 항공port (SID) / 프라이아 공항 (RAI)
+🤝 동맹: 
+🛩️ 운용 기재: ATR 72-500, B737-300, B737-700
+🗺️ 취항지: 살 ↔ 리스본, 보르도, 런던, 밀라노, 포르투, 아말피 등
+
+📍 주요 노선: 카보베르데 국내 9개 섬 및 유럽 15+ 도시
+
+✨ 대서양의 잃어진 섬 카보베르데의 9개 거주 섬을 연결하는 유일한 항공사이자, 유럽과 아메리카를 잇는 대서양 항로의 중요한 거점입니다.
+
+📍TACV Cabo Verde Airlines는(은) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 TACV Cabo Verde Airlines (VR) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#TACV #카보베르데항공 #카보베르데 #대서양 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

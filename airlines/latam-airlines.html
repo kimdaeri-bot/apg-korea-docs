@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LATAM Airlines LA — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/LATAM_Chile_Boeing_787-9_Dreamliner_%28CC-BGM%29.jpg/1280px-LATAM_Chile_Boeing_787-9_Dreamliner_%28CC-BGM%29.jpg" alt="LATAM Airlines LA">
+</div>
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ LATAM Airlines LA
+
+🇨🇱 칠레의 국적항공사, <strong>LATAM Airlines(라탐항공)</strong>를 소개합니다!
+
+LATAM Airlines는 남미 최대 항공사 그룹의 핵심으로, <strong>아르투로 메리노 베니테스 국제공항(SCL)</strong>을 메인 허브로 남미 전역과 북미, 유럽, 오세아니아를 연결합니다. LAN 칠레와 TAM 브라질의 합병으로 탄생한 남미의 플래그십 캐리어입니다.
+
+🛫 허브 공항: 산티아고 국제공항 (SCL), 리마 (LIM), 보고타 (BOG)
+🤝 동맥: 독자 운영 (이전 Delta 파트너십)
+🛩️ 운용 기재: Boeing 787-9, 777-300ER, A320neo, A321neo, A319, A320, A321
+🗺️ 취항지: 140+ 도시 (16개국)
+
+📍 주요 노선: 산티아고 ↔ 마드리드, 런던, 프랑크푸르트, 뉴욕, 로스앤젤레스, 시드니, 오클랜드, 부에노스아이레스, 리마, 보고타 등
+
+✨ 남미에서 유럽까지, 남미에서 오세아니아까지 직항을 운영하는 유일한 남미 항공사 그룹입니다. 최신 Boeing 787 드림라이너 장거리 노선으로 쾌적한 비행을 제공하며, LATAM Pass 마일리지로 보너스 항공권 교환도 가능합니다.
+
+📍LATAM Airlines는 GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 LATAM Airlines (LA) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#LATAMAirlines #라탐항공 #칠레여행 #산티아고 #남미 #Boeing787 #APGKorea #GP275 #항공사소개</div>
+</div>
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

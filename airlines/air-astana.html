@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air Astana KC — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Air_Astana_Boeing_767-3ER_P4-KBC_%28cropped%29.jpg/1280px-Air_Astana_Boeing_767-3ER_P4-KBC_%28cropped%29.jpg" alt="Air Astana">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Air Astana
+
+🇰🇿 카자흐스탄의 국적항공사, <strong>Air Astana</strong>을(를) 소개합니다!
+
+2002년 설립된 Air Astana은(는) <strong>알마티 국제공항 (ALA) / 누르술탄 나자르바예프 국제공항 (NQZ)</strong>을(를) 허브로 중앙아시아와 유럽·아시아 주요 도시을(를) 연결하는 항공사입니다.
+
+카자흐스탄의 국적항공사이자 중앙아시아 최대 항공사입니다. 실크로드의 교차로에 위치한 허브를 기반으로 동서양을 잇는 전략적 노선망을 운영하며, 4스카이스타 평가를 받는 고품질 서비스를 제공합니다. 하늘과 초원을 상징하는 터키석 컬러의 기체가 인상적입니다.
+
+🛫 허브 공항: 알마티 국제공항 (ALA) / 누르술탄 나자르바예프 국제공항 (NQZ)
+🤝 동맹: 
+🛩️ 운용 기재: A320, A321, A320neo, B767-300ER, B787-8, E190
+🗺️ 취항지: 알마티 ↔ 서울, 이스탄불, 두바이, 모스크바, 베이징, 런던, 프랑크푸르트 등
+
+📍 주요 노선: 중앙아시아와 유럽·아시아 주요 도시
+
+✨ 중앙아시아 유일의 4스카이스타 항공사로, 최신 B787 드림라이너와 A320neo 기종으로 장거리 단거리 모두 컴포트 높은 서비스를 제공합니다. 카자흐스탄의 아름다운 자연과 유적지를 잇는 게이트웨이 역할을 합니다.
+
+📍Air Astana는(은) GP-275를 통해 예약 및 발권 가능하며, 전 세계 여행사들이 쉽게 접근할 수 있도록 APG가 함께합니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Air Astana (KC) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#AirAstana #카자흐스탄항공 #알마티 #중앙아시아여행 #APGKorea #GP275 #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>

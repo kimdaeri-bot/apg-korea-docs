@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clic Air VE — APG Korea</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',-apple-system,sans-serif;background:#0b0f19;color:#e0e4ed}
+.back{display:inline-flex;align-items:center;gap:6px;color:#6e8efb;text-decoration:none;font-weight:600;font-size:.9rem;padding:20px 28px}
+.back:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;background:#0b0f19}
+.hero img{width:100%;height:auto;display:block;margin:0 auto;filter:brightness(.9)}
+.content{max-width:760px;margin:0 auto;padding:0 20px 40px}
+.copy-area{position:relative;background:#141825;border-radius:16px;padding:28px 30px;margin-bottom:20px;border:1px solid #1e2435;line-height:1.85;font-size:.95rem;white-space:pre-wrap;color:#b8c0d0}
+.copy-area strong{color:#e0e4ed}
+.copy-btn{position:absolute;top:12px;right:12px;background:#6e8efb;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#5a7de8}
+.copy-btn.copied{background:#22c55e}
+.footer{text-align:center;padding:28px;color:#2a3555;font-size:.72rem;border-top:1px solid #141825}
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← APG Korea 문서함</a>
+
+<div class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Clic_Embraer_ERJ-145_HK-4543.jpg" alt="Clic Air">
+</div>
+
+<div class="content">
+  <div class="copy-area" id="copyText">
+    <button class="copy-btn" onclick="copyText()">📋 복사</button>✈️ Clic Air
+
+🇨🇴 콜롬비아의 지역 항공사, <strong>Clic Air(클릭에어)</strong>를 소개합니다!
+
+2015년 설립된 Clic Air는 콜롬비아의 신생 지역항공사로서, <strong>보고타 엘도라도 국제공항(BOG)</strong>을 허브로 콜롬비아 중소도시와 지방 커뮤니티를 연결하는 항공사입니다. 대형 항공사가 서비스하지 않는 2차 도시들을 연결하며 <strong>지역 접근성 향상</strong>에 기여하고 있습니다.
+
+콜롬비아는 안데스 산맥과 아마존 정글로 인해 육로 이동이 어려운 지역이 많아, Clic Air와 같은 지역항공사의 역할이 매우 중요합니다. 소형 제트기를 활용해 비즈니스 및 관광객들에게 효율적인 국내선 네트워크를 제공하며, <strong>저비용 항공사(LCC) 모델</strong>로 합리적인 가격대의 항공권을 제공합니다.
+
+🛫 허브 공항: 보고타 엘도라도 국제공항 (BOG)
+🛩️ 운용 기재: Embraer ERJ-145
+🗺️ 취항지: 15+ 도시 (콜롬비아 국내)
+
+📍 주요 노선: 보고타 ↔ 아르메니아, 페레이라, 부카라망가, 바란카베르메하, 쿠쿠타, 이바게, 몬테리아 등
+
+✨ Clic Air는 콜롬비아 커피 재배 지역과 석유 산업 도시를 효율적으로 연결하며, 비즈니스 여행객과 지역 주민들에게 빠른 이동 수단을 제공합니다. Embraer ERJ-145 소형 제트기는 50석 규모로 중소도시 수요에 최적화되어 있으며, 짧은 활주로에서도 운영 가능합니다. 콜롬비아 국내선 시장의 경쟁을 촉진하며 성장하고 있는 항공사입니다.
+
+APG Korea는 전 세계 170개국, 100개 이상의 글로벌 네트워크를 기반으로 APG Airlines를 통해 Clic Air (VE) 항공권의 BSP 발권을 지원합니다.
+
+📧 문의: sales@apg-ga.co.kr
+
+#ClicAir #클릭에어 #콜롬비아 #보고타 #콜롬비아국내선 #APGKorea #항공사소개</div>
+
+</div>
+
+<div class="footer">© 2026 APG Korea · Internal Use Only · kimdaeri-bot/apg-korea-docs</div>
+
+<script>
+function copyText(){
+  const el=document.getElementById('copyText');
+  const text=el.innerText.replace('📋 복사','').trim();
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=el.querySelector('.copy-btn');
+    btn.textContent='✅ 복사됨!';
+    btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='📋 복사';btn.classList.remove('copied');},2000);
+  });
+}
+</script>
+</body>
+</html>
